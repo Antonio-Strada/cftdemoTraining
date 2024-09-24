@@ -1,0 +1,28 @@
+<mvc:View
+    controllerName="com.xtendhr.web.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" displayBlock="true" xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m" xmlns:l="sap.ui.layout.form">
+
+    <Page id="detailPage" title="Detail">
+				
+        <content>
+          <f:SimpleForm layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" adjustLabelSpan="false" emptySpanL="4" emptySpanM="4"
+		  columnsL="1" columnsM="1" editable="true">
+		  <Label text="External Code"/>
+		  <Input value="{odataDetail>/externalCode}" editable="false"/>
+		  <Label text="Shirt Color"/>
+		  <Input id="inputEditShirtColor" value="{odataDetail>/cust_ShirtColor}" editable="false"/>
+		  <Label text="Shirt Size"/>
+		  <Input id="inputEditShirtSize" value="{odataDetail>/cust_ShirtSize}" editable="false" />
+		  </f:SimpleForm>
+		  <HBox>
+            <Button text="Delete" press="onDelete" icon="sap-icon://delete"  class="sapUiTinyMarginEnd" />
+			<Button text="Back" press="onBackMain" icon="sap-icon://nav-back" class="sapUiTinyMarginEnd"/>	
+			<Button text="Edit" press="onEditEnable" icon="sap-icon://edit"  class="sapUiTinyMarginEnd"/>
+			<Button id ="BtnSave" text="Save" press="onEditSave" visible="false" icon="sap-icon://save" />
+		</HBox>
+        </content>
+    </Page>
+</mvc:View>
+
+  

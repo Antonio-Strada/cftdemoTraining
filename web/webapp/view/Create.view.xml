@@ -1,0 +1,47 @@
+<mvc:View
+    controllerName="com.xtendhr.web.controller.Create"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="CreatePage"
+        title="Create new"
+    >
+        <content>
+            <VBox>
+                <f:SimpleForm
+                    layout="ResponsiveGridLayout"
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    adjustLabelSpan="false"
+                    emptySpanL="4"
+                    emptySpanM="4"
+                    columnsL="1"
+                    columnsM="1"
+                    editable="true"
+                >
+                    <Label text="Shirt Size" />
+                    <Input id="inputShirtSize" />
+
+                    <Label text="Shirt Color" />
+                    <Input id="inputShirtColor" />
+                </f:SimpleForm>
+                <HBox>
+                    <Button
+                        text="Save"
+                        press="onSavePress"
+                        icon="sapp-icon://save"
+                        class="sapUiTinyMarginEnd"
+                    />
+                    <Button
+                        text="Back"
+                        press="onBackMain"
+                        icon="sapp-icon://nav-back"
+                        class="sapUiTinyMarginEnd"
+                    />
+                </HBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
