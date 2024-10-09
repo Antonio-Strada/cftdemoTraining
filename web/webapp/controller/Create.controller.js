@@ -14,6 +14,7 @@ sap.ui.define([
             var self = this
             var shirtSize = this.byId("inputShirtSize").getValue();
             var shirtColor = this.byId("inputShirtColor").getValue();
+            var employee = this.byId("inputEmployee").getValue();
 
             if(!shirtColor || !shirtSize) {
                 MessageToast.show("Please, all fields are required");
@@ -22,10 +23,11 @@ sap.ui.define([
 
             var newRecordData = {
                 "cust_ShirtSize": shirtSize,
-                "cust_ShirtColor": shirtColor
+                "cust_ShirtColor": shirtColor,
+                "cust_Employee": employee,
             };
 
-            var path = "/srv/postDestination?destinationX=MDFData&path=cust_CompanyShirts_S0023961268";
+            var path = "/srv/postDestination?destinationX=sfodataapi&path=/odata/v2/cust_CompanyShirts_S0023961268";
 
             $.ajax({
                 url: path,

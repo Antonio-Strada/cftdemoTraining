@@ -88,7 +88,7 @@
                             id="idColumnEmployee"
                         >
                             <Label
-                                text="Shirt Color"
+                                text="Employee"
                                 id="idLabelEmployee"
                             />
                             <t:template>

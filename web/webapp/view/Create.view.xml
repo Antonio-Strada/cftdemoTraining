@@ -26,6 +26,10 @@
 
                     <Label text="Shirt Color" />
                     <Input id="inputShirtColor" />
+
+                    <Label text="Employee" />
+                    <Input id="inputEmployee" />
+
                 </f:SimpleForm>
                 <HBox>
                     <Button

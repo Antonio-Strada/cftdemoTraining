@@ -15,7 +15,7 @@ function (Controller, MessageToast) {
         },
         onCallSRV: function(){
             var self = this;
-            var path = "/srv/destinations?destinationX=MDFData&path=cust_CompanyShirts_S0023961268?$format=json";
+            var path = "/srv/destinations?destinationX=sfodatatech&path=/odata/v2/cust_CompanyShirts_S0023961268?$format=json";
             
             $.ajax({
                 url: path,

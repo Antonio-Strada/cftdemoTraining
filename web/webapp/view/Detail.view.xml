@@ -14,6 +14,8 @@
 		  <Input id="inputEditShirtColor" value="{odataDetail>/cust_ShirtColor}" editable="false"/>
 		  <Label text="Shirt Size"/>
 		  <Input id="inputEditShirtSize" value="{odataDetail>/cust_ShirtSize}" editable="false" />
+		  <Label text="Employee"/>
+		  <Input id="inputEditEmployee" value="{odataDetail>/cust_Employee}" editable="false" />
 		  </f:SimpleForm>
 		  <HBox>
             <Button text="Delete" press="onDelete" icon="sap-icon://delete"  class="sapUiTinyMarginEnd" />

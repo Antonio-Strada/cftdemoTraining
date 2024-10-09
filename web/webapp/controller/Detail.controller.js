@@ -30,7 +30,7 @@ function (Controller, MessageToast, JSONModel) {
 
             //Url para la llamada Postmanm "destinations" en server.js, "MDFData" nombre destination
             //El resto, llamada Postman y se mete el external code para completar
-            var path = "/srv/destinations?destinationX=MDFData&path=cust_CompanyShirts_S0023961268?$filter= externalCode eq '" + self.externalCodeIdGlobal + "'&$format=json";
+            var path = "/srv/destinations?destinationX=sfodatatech&path=/odata/v2/cust_CompanyShirts_S0023961268?$filter= externalCode eq '" + self.externalCodeIdGlobal + "'&$format=json";
 
             //Solicitud Ajax
             $.ajax({
@@ -60,6 +60,7 @@ function (Controller, MessageToast, JSONModel) {
         onEditEnable: function(oEvent){
             var shirtSize = this.byId("inputEditShirtSize").setEditable(true);
             var shirtColor = this.byId("inputEditShirtColor").setEditable(true);
+            var employee = this.byId("inputEditEmployee").setEditable(true);
             var BtnEditable = this.byId("BtnSave").setVisible(true);
         },
 
@@ -71,6 +72,7 @@ function (Controller, MessageToast, JSONModel) {
             //Extraer el input
             var shirtSize = this.byId("inputEditShirtSize").getValue();
             var shirtColor = this.byId("inputEditShirtColor").getValue();
+            var employee = this.byId("inputEditEmployee").getValue();
 
             console.log("ID es: " + IdtoEdit);
             //Meter el metadata para luego el Ajax de tipo POST
@@ -82,10 +84,11 @@ function (Controller, MessageToast, JSONModel) {
                  "externalCode": IdtoEdit,
                  "cust_ShirtSize": shirtSize,
                  "cust_ShirtColor": shirtColor,
+                 "cust_Employee": employee,
              };
              console.log("Update datos: " + updateRecordData);
 
-             var path = "/srv/editDestination?destinationX=MDFData&path=upsert";
+             var path = "/srv/editDestination?destinationX=sfodataapi&path=/odata/v2/upsert";
 
             $.ajax({
                 url: path,
@@ -112,7 +115,7 @@ function (Controller, MessageToast, JSONModel) {
         onDelete: function(oEvent) {
             var self = this;
             var IdtoDelete = self.externalCodeIdGlobal;
-            var path = "/srv/deleteDes?destinationX=MDFData&path=cust_CompanyShirts_S0023961268(" + IdtoDelete + ")";
+            var path = "/srv/deleteDes?destinationX=sfodataapi&path=/odata/v2/cust_CompanyShirts_S0023961268(" + IdtoDelete + ")";
             console.log(path);
             $.ajax({
                 url: path,

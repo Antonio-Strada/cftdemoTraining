@@ -3,8 +3,9 @@
   "routes": [
     {
       "source": "^/srv/(.*)$",
-      "destination": "srv-api",
+      "destination": "srv",
       "csrfProtection": false,
+      "authenticationType": "xsuaa",
       "target": "$1"
     },
     {

@@ -6,7 +6,7 @@ const httpClient= require('@sap-cloud-sdk/http-client');
 const { retrieveJwt } = require('@sap-cloud-sdk/connectivity');
 
 const JWTStrategy = require("@sap/xssec").JWTStrategy;
-const services = xsenv.getServices({ uaa:"cfdemoS0023961268-xsuaa"}, { dest: { label: 'destination'} }); //XSUAA service y Destination
+const services = xsenv.getServices({ uaa:"cfdemo1268-xsuaa"}, { dest: { label: 'destination'} }); //XSUAA service y Destination
 
 const app = express();
 
